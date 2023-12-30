@@ -1,0 +1,58 @@
+﻿/* CSS для ::before */
+body {
+    background-color: #f0f0f0; /* Колір фону як резервний варіант */
+}
+
+@keyframes appear {
+    from {
+        opacity: 0; /* Начальное значение прозрачности: невидимый */
+        transform: scale(0.8); /* Масштабирование элемента */
+    }
+
+    to {
+        opacity: 1; /* Конечное значение прозрачности: видимый */
+        transform: scale(1); /* Исходный размер элемента */
+    }
+}
+
+.snowman {
+    position: relative;
+    width: 30vmin;
+    height: 64vmin;
+    opacity: 0; /* Початкова прозорість: невидимий */
+    animation: appear 5s ease-in-out forwards; /* Додано 'forwards' для збереження стану після анімації */
+    top: -40%;
+    left: 35%;
+
+}
+
+.snowman-before {
+    position: absolute;
+    width: 18.5vmin; /* Уменьшено вдвічі */
+    height: 18.5vmin; /* Уменьшено вдвічі */
+    background: #0000;
+    border-radius: 50%;
+    bottom: -8.5vmin; /* Уменьшено вдвічі */
+    left: 50%;
+    transform: translate(calc(-50% - 2.25vmin), 0); /* Смещение также уменьшено вдвічі */
+    box-shadow: 0 -42.5vmin 0 -8.5vmin #222, 4vmin -42.5vmin 0 -8.5vmin #222, 1.875vmin -40.475vmin 0 -8.325vmin orange, 2vmin -34vmin 0 -8.5vmin #233, 2.25vmin -33.9375vmin 0 -8.375vmin #233, 2vmin -30.5vmin 0 -8.5vmin #111, 2.125vmin -27vmin 0 -8.375vmin #222, 2vmin -42.5vmin 0 -3.5vmin #fff, 2vmin -41vmin 0.5vmin -5vmin #aaa, 2vmin -31.5vmin 0 -2vmin #fff, 2vmin -30vmin 1vmin -3.5vmin #aaa, 2vmin -20vmin 0 0 #fff;
+    z-index: 99;
+}
+
+/* CSS для ::after */
+.snowman-after {
+    position: absolute;
+    width: 30vmin; /* Уменьшено вдвічі */
+    height: 36vmin; /* Уменьшено вдвічі */
+    bottom: 11.5vmin; /* Уменьшено вдвічі */
+    left: 50%;
+    box-shadow: 0 -9.5vmin 0 -9vmin, 0 -13vmin 0 -11vmin #837, 0 -20vmin 0 -11vmin;
+    border-radius: 9.25vmin 9.25vmin 0 0;
+    transform-origin: top center;
+    transform: translate(-50%, 0) rotate(3deg);
+    background-image: linear-gradient(60deg, transparent 45%, brown 0 50%, transparent 0), linear-gradient(-64deg, transparent 45%, brown 0 50%, transparent 0), linear-gradient(-60deg, transparent 45%, brown 0 50%, transparent 0), linear-gradient(-50deg, transparent 45%, brown 0 54%, transparent 0), linear-gradient(70deg, transparent 45%, brown 0 53%, transparent 0), linear-gradient(23deg, orange 20%, transparent 0), linear-gradient(-88deg, transparent 42%, maroon 0 50%, transparent 0), linear-gradient(75deg, transparent 45%, maroon 0 50%, transparent 0), linear-gradient(85deg, transparent 45%, maroon 0 50%, transparent 0), linear-gradient(95deg, transparent 45%, maroon 0 50%, transparent 0), linear-gradient(110deg, transparent 45%, maroon 0 48%, transparent 0), linear-gradient(80deg, transparent 45%, maroon 0 48%, transparent 0), linear-gradient(102deg, transparent 45%, maroon 0 51%, transparent 0);
+    background-size: 20% 50%, 18% 45%, 9% 11%, 9% 11%, 9% 11%, 16% 20%, 22% 65%, 20% 20%, 20% 25%, 25% 20%, 18% 20%, 22% 22%, 18% 21%;
+    background-position: 90% 50%, 14% 55%, 6% 75%, 5% 73%, 13% 75%, 60% 0%, 102% 92%, 100% 20%, 103% 15%, 109% 19%, 109% 17%, 102.5% 15%, 106% 16%;
+    background-repeat: no-repeat;
+    z-index: 99;
+}
